@@ -5,16 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dinesh Alla | Data Portfolio</title>
 </head>
-<body style="font-family: Arial; padding: 2rem;">
-  <h1>Hi, I’m Dinesh Alla 👋</h1>
-  <p>Welcome to my portfolio! I'm passionate about data, dashboards, and turning insights into action.</p>
+<body style="font-family: Arial, sans-serif; margin:0;">
 
-  <h2>🔗 Quick Links</h2>
-  <ul>
-   <li>
-  <h3>🏏 IPL Team Stats (2008–2020)</h3>
-  <iframe src="https://public.tableau.com/views/IPL2008-2020teams/Dashboard1?:showVizHome=no&:embed=true"
-          width="1000" height="700" frameborder="0"></iframe>
+  <!-- ===== HEADER / HERO SECTION ===== -->
+  <header style="text-align:center; padding:2rem; background:#f5f5f5;">
+    <h1>Dinesh Alla</h1>
+    <p>Data & Analytics | Tableau | SQL | Python | Power BI</p>
+    <a href="resume.pdf" download style="display:inline-block; margin-top:1rem; padding:0.5rem 1rem; background:#007bff; color:#fff; text-decoration:none; border-radius:4px;">
+      📄 Download Resume
+    </a>
+  </header>
+
+  <!-- ===== FILTER BUTTONS ===== -->
+  <nav style="text-align:center; padding:1rem;">
+    <button onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('tableau')">Tableau</button>
+    <button onclick="filterProjects('sql')">SQL</button>
+    <button onclick="filterProjects('python')">Python</button>
+    <button onclick="filterProjects('powerbi')">Power BI</button>
+  </nav>
+
+  <!-- ===== PROJECT GALLERY ===== -->
+  <section id="projects" style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; padding:1rem;">
+
+    <!-- Example Tableau Card -->
+    <div class="project-card tableau" style="background:#fff; border-radius:6px; padding:1rem; width:350px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+      <h3>🏏 IPL Team Stats (2008–2020)</h3>
+      <iframe src="https://public.tableau.com/views/IPL2008-2020teams/Dashboard1?:showVizHome=no&:embed=true"
+              width="100%" height="250" frameborder="0"></iframe>
+      <p>Analyzed IPL team performance over 12 seasons using Tableau.</p>
+    </div>
+
+    <!-- Example SQL Card -->
+    <div class="project-card sql" style="background:#fff; border-radius:6px; padding:1rem; width:350px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+      <h3>Customer Segmentation</h3>
+      <p>SQL queries to segment customers based on engagement levels.</p>
+      <a href="https://github.com/DineshAlla12/sql-customer-segmentation" target="_blank">View on GitHub</a>
+    </div>
+
+    <!-- Example Python Card -->
+    <div class="project-card python" style="background:#fff; border-radius:6px; padding:1rem; width:350px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+      <h3>Data Cleaning Script</h3>
+      <p>Automated data cleaning with Pandas and Python for faster analysis.</p>
+      <a href="https://github.com/DineshAlla12/python-data-cleaning" target="_blank">View on GitHub</a>
+    </div>
+
+  </section>
+
+  <!-- ===== FILTER SCRIPT ===== -->
+  <script>
+    function filterProjects(type) {
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (type === 'all' || card.classList.contains(type)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+
 </li>
 
     <li><a href="https://github.com/DineshAlla12" target="_blank">GitHub Projects</a></li>
