@@ -2,708 +2,249 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dinesh Alla | Data Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dinesh Alla | Portfolio</title>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
+    * { margin:0; padding:0; box-sizing:border-box; }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      color: #333;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg,#667eea,#764ba2);
+      min-height:100vh;
+      color:#333;
     }
-    
+
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
+      max-width:1200px;
+      margin:auto;
+      padding:0 20px;
     }
-    
-    /* Header Styles */
+
     header {
-      text-align: center;
-      padding: 4rem 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      margin-bottom: 2rem;
+      text-align:center;
+      padding:4rem 0;
+      background:#fff;
+      margin-bottom:2rem;
     }
-    
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
+
+    h1 {
+      font-size:3.2rem;
+      background: linear-gradient(135deg,#667eea,#764ba2);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
-    
-    .hero-subtitle {
-      font-size: 1.4rem;
-      color: #666;
-      margin-bottom: 2rem;
-      font-weight: 300;
+
+    header p {
+      font-size:1.3rem;
+      color:#666;
+      margin:1rem 0 2rem;
     }
-    
-    .cta-button {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+
+    .cta {
+      background:#667eea;
+      color:#fff;
+      padding:12px 30px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
     }
-    
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
-    }
-    
-    /* Navigation Styles */
+
     nav {
-      text-align: center;
-      padding: 2rem 0;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      margin-bottom: 3rem;
+      text-align:center;
+      margin-bottom:3rem;
     }
-    
+
     .filter-btn {
-      background: transparent;
-      border: 2px solid #667eea;
-      color: #667eea;
-      padding: 0.8rem 1.5rem;
-      margin: 0 0.5rem;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s ease;
+      border:2px solid #667eea;
+      background:none;
+      color:#667eea;
+      padding:10px 18px;
+      margin:5px;
+      border-radius:25px;
+      cursor:pointer;
+      font-weight:600;
     }
-    
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: #667eea;
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background:#667eea;
+      color:#fff;
     }
-    
-    /* Project Gallery Styles */
-    .projects-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 2rem;
-      padding: 2rem 0;
+
+    .projects {
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+      gap:2rem;
+      padding-bottom:4rem;
     }
-    
-    .project-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-      transition: all 0.4s ease;
-      position: relative;
+
+    .card {
+      background:#fff;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 15px 35px rgba(0,0,0,.1);
+      transition:.3s;
     }
-    
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+
+    .card:hover {
+      transform:translateY(-8px);
     }
-    
-    .project-header {
-      padding: 1.5rem;
-      background: linear-gradient(135deg, #f8f9ff, #e8ecff);
-      border-bottom: 1px solid #eee;
+
+    .card-header {
+      padding:1.2rem;
+      background:#f4f6ff;
+      font-weight:700;
+      font-size:1.2rem;
     }
-    
-    .project-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #333;
-      margin-bottom: 0.5rem;
+
+    .tags {
+      margin-top:6px;
     }
-    
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-    
+
     .tag {
-      background: #667eea;
-      color: white;
-      padding: 0.3rem 0.8rem;
-      border-radius: 15px;
-      font-size: 0.8rem;
-      font-weight: 500;
+      display:inline-block;
+      background:#667eea;
+      color:#fff;
+      padding:3px 10px;
+      border-radius:14px;
+      font-size:.75rem;
+      margin-right:5px;
     }
-    
-    .project-visual {
-      height: 280px;
-      overflow: hidden;
-      position: relative;
+
+    .card-body {
+      padding:1.2rem;
+      color:#555;
+      line-height:1.6;
     }
-    
-    .project-visual iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+
+    .card-body ul {
+      margin-top:10px;
+      padding-left:18px;
     }
-    
-    .project-content {
-      padding: 1.5rem;
+
+    .card-footer {
+      padding:1rem;
+      background:#f4f6ff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    
-    .project-description {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #666;
-      margin-bottom: 1rem;
+
+    .tech {
+      background:#667eea;
+      color:#fff;
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:bold;
+      font-size:.85rem;
     }
-    
-    .project-highlights {
-      background: #f8f9ff;
-      padding: 1rem;
-      border-radius: 10px;
-      margin: 1rem 0;
-      border-left: 4px solid #667eea;
-    }
-    
-    .project-highlights h4 {
-      color: #667eea;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    
-    .project-highlights ul {
-      list-style: none;
-      font-size: 0.9rem;
-      color: #666;
-    }
-    
-    .project-highlights li::before {
-      content: "✓ ";
-      color: #667eea;
-      font-weight: bold;
-    }
-    
-    .project-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-      background: #f8f9ff;
-      border-top: 1px solid #eee;
-    }
-    
-    .view-project {
-      background: #667eea;
-      color: white;
-      text-decoration: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 25px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    
-    .view-project:hover {
-      background: #5a6fd8;
-      transform: translateY(-2px);
-    }
-    
-    .project-tech {
-      display: flex;
-      gap: 0.5rem;
-    }
-    
-    .tech-icon {
-      width: 30px;
-      height: 30px;
-      background: #667eea;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 0.8rem;
-      font-weight: bold;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.2rem;
-      }
-      
-      .projects-gallery {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      
-      .filter-btn {
-        margin: 0.25rem;
-        padding: 0.6rem 1rem;
-      }
-    }
-    
-    /* Animation for page load */
-    .project-card {
-      animation: fadeInUp 0.6s ease forwards;
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+
+    .view {
+      text-decoration:none;
+      background:#667eea;
+      color:#fff;
+      padding:8px 16px;
+      border-radius:20px;
+      font-size:.9rem;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Header Section -->
-  <header>
-    <div class="container">
-      <h1 class="hero-title">Dinesh Alla</h1>
-      <p class="hero-subtitle">Data Analytics Specialist | Business Intelligence Expert | Visualization Enthusiast</p>
-      <a href="resume.pdf" download class="cta-button">
-        📄 Download Resume
+<header>
+  <div class="container">
+    <h1>Dinesh Alla</h1>
+    <p>Data Analytics • Business Intelligence • Python Automation</p>
+    <a class="cta" href="resume.pdf" download>Download Resume</a>
+  </div>
+</header>
+
+<div class="container">
+
+<nav>
+  <button class="filter-btn active" onclick="filter('all')">All</button>
+  <button class="filter-btn" onclick="filter('tableau')">Tableau</button>
+  <button class="filter-btn" onclick="filter('python')">Python</button>
+</nav>
+
+<section class="projects">
+
+  <!-- PYTHON: Fellow -->
+  <div class="card python">
+    <div class="card-header">
+      🤖 Fellow – Voice Assistant
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Speech</span>
+      </div>
+    </div>
+    <div class="card-body">
+      A Python voice assistant that understands voice & typed commands, speaks responses,
+      opens websites, tells time/date, and fetches real-time weather.
+      <ul>
+        <li>Speech Recognition</li>
+        <li>Text-to-Speech</li>
+        <li>Weather API</li>
+      </ul>
+    </div>
+    <div class="card-footer">
+      <div class="tech">Py</div>
+      <a class="view" target="_blank"
+         href="https://github.com/DineshAlla12/Fellow-Voice-Assistant">
+         GitHub
       </a>
     </div>
-  </header>
-
-  <!-- Navigation Filters -->
-  <div class="container">
-    <nav>
-      <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
-      <button class="filter-btn" onclick="filterProjects('tableau')">Tableau</button>
-      <button class="filter-btn" onclick="filterProjects('python')">Python</button>
-      <button class="filter-btn" onclick="filterProjects('sql')">SQL</button>
-    </nav>
-
-    <!-- Projects Gallery -->
-    <section class="projects-gallery">
-
-      <!-- IPL Team Stats Project -->
-      <div class="project-card tableau" data-category="tableau">
-        <div class="project-header">
-          <h3 class="project-title">🏏 IPL Team Performance Analytics (2008–2020)</h3>
-          <div class="project-tags">
-            <span class="tag">Sports Analytics</span>
-            <span class="tag">Interactive Dashboard</span>
-            <span class="tag">Performance Metrics</span>
-          </div>
-        </div>
-        
-        <div class="project-visual">
-          <iframe src="https://public.tableau.com/views/IPL2008-2020teams/Dashboard1?:showVizHome=no&:embed=true"
-                  title="IPL dashboard"></iframe>
-        </div>
-        
-        <div class="project-content">
-          <p class="project-description">
-            Comprehensive analysis of Indian Premier League team performance spanning 12 seasons. This interactive dashboard provides deep insights into team statistics, venue performance, and seasonal trends through dynamic filtering capabilities.
-          </p>
-          
-          <div class="project-highlights">
-            <h4>Key Features & Insights:</h4>
-            <ul>
-              <li>Multi-season performance comparison across all IPL teams</li>
-              <li>Venue-specific performance analytics with home/away breakdowns</li>
-              <li>Interactive filters for team selection and venue analysis</li>
-              <li>Win/loss ratios and performance trends over time</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="project-footer">
-          <div class="project-tech">
-            <div class="tech-icon">T</div>
-          </div>
-          <a href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/IPL2008-2020teams/Dashboard1" 
-             target="_blank" class="view-project">View Dashboard</a>
-        </div>
-      </div>
-
-      <!-- International Students Project -->
-      <div class="project-card tableau" data-category="tableau">
-        <div class="project-header">
-          <h3 class="project-title">🌍 Global Student Migration Analytics</h3>
-          <div class="project-tags">
-            <span class="tag">Education Analytics</span>
-            <span class="tag">Geographic Analysis</span>
-            <span class="tag">Trend Analysis</span>
-          </div>
-        </div>
-        
-        <div class="project-visual">
-          <iframe src="https://public.tableau.com/views/InternationalStudents_17546218947790/InternationalStudentsDashboard?:showVizHome=no&:embed=true"
-                  title="International Students"></iframe>
-        </div>
-        
-        <div class="project-content">
-          <p class="project-description">
-            Strategic analysis of international student migration patterns, examining regional preferences, destination trends, and temporal changes in global education mobility. The dashboard reveals key insights for educational institutions and policy makers.
-          </p>
-          
-          <div class="project-highlights">
-            <h4>Analysis Highlights:</h4>
-            <ul>
-              <li>Regional migration flow analysis with interactive maps</li>
-              <li>Year-over-year trend identification and forecasting</li>
-              <li>Top destination countries and emerging markets</li>
-              <li>Demographic breakdowns and preference patterns</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="project-footer">
-          <div class="project-tech">
-            <div class="tech-icon">T</div>
-          </div>
-          <a href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/InternationalStudents_17546218947790/InternationalStudentsDashboard" 
-             target="_blank" class="view-project">View Dashboard</a>
-        </div>
-      </div>
-
-      <!-- Video Games Sales Project -->
-      <div class="project-card tableau" data-category="tableau">
-        <div class="project-header">
-          <h3 class="project-title">🎮 Gaming Industry Sales Intelligence (2020)</h3>
-          <div class="project-tags">
-            <span class="tag">Market Analysis</span>
-            <span class="tag">Platform Comparison</span>
-            <span class="tag">Genre Analytics</span>
-          </div>
-        </div>
-        
-        <div class="project-visual">
-          <iframe src="https://public.tableau.com/views/VIDEOGAMESSALESTILL2020/Dashboard1?:showVizHome=no&:embed=true"
-                  title="Video Games Sales"></iframe>
-        </div>
-        
-        <div class="project-content">
-          <p class="project-description">
-            Comprehensive market intelligence dashboard analyzing video game sales performance across platforms, regions, and genres. Provides strategic insights for game developers, publishers, and market analysts through interactive visualizations.
-          </p>
-          
-          <div class="project-highlights">
-            <h4>Market Insights:</h4>
-            <ul>
-              <li>Platform performance comparison (Console vs PC vs Mobile)</li>
-              <li>Regional market penetration and preferences analysis</li>
-              <li>Genre popularity trends and revenue drivers</li>
-              <li>Sales forecasting and market opportunity identification</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="project-footer">
-          <div class="project-tech">
-            <div class="tech-icon">T</div>
-          </div>
-          <a href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/VIDEOGAMESSALESTILL2020/Dashboard1" 
-             target="_blank" class="view-project">View Dashboard</a>
-        </div>
-      </div>
-
-      <!-- Tesla Sales Project -->
-      <div class="project-card tableau" data-category="tableau">
-        <div class="project-header">
-          <h3 class="project-title">🚗 Tesla Sales Performance Analysis (2016–2017)</h3>
-          <div class="project-tags">
-            <span class="tag">Automotive Analytics</span>
-            <span class="tag">Time Series</span>
-            <span class="tag">Product Mix</span>
-          </div>
-        </div>
-        
-        <div class="project-visual">
-          <iframe src="https://public.tableau.com/views/TeslaSalesyear20162017/Dashboard1?:showVizHome=no&:embed=true"
-                  title="Tesla Sales"></iframe>
-        </div>
-        
-        <div class="project-content">
-          <p class="project-description">
-            Strategic analysis of Tesla's sales performance during critical growth years 2016-2017. Examines quarterly trends, model mix optimization, and market penetration strategies through comprehensive time-series analysis and product performance metrics.
-          </p>
-          
-          <div class="project-highlights">
-            <h4>Business Intelligence:</h4>
-            <ul>
-              <li>Quarterly sales trend analysis with seasonal adjustments</li>
-              <li>Model mix analysis (Model S, Model X performance comparison)</li>
-              <li>Growth rate calculations and market expansion metrics</li>
-              <li>Revenue forecasting and performance benchmarking</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="project-footer">
-          <div class="project-tech">
-            <div class="tech-icon">T</div>
-          </div>
-          <a href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/TeslaSalesyear20162017/Dashboard1" 
-             target="_blank" class="view-project">View Dashboard</a>
-        </div>
-      </div>
-
-      <!-- Marvel Characters Project -->
-      <div class="project-card tableau" data-category="tableau">
-        <div class="project-header">
-          <h3 class="project-title">🦸 Marvel Universe Character Analytics</h3>
-          <div class="project-tags">
-            <span class="tag">Entertainment Data</span>
-            <span class="tag">Character Analysis</span>
-            <span class="tag">Network Analysis</span>
-          </div>
-        </div>
-        
-        <div class="project-visual">
-          <iframe src="https://public.tableau.com/views/MarvelCharacters_17545388066450/Dashboard1?:showVizHome=no&:embed=true"
-                  title="Marvel Characters"></iframe>
-        </div>
-        
-        <div class="project-content">
-          <p class="project-description">
-            Deep dive analysis of Marvel Universe characters exploring attributes, appearance frequencies, and interconnections across comic series. This dashboard provides insights into character popularity, story arcs, and universe expansion patterns.
-          </p>
-          
-          <div class="project-highlights">
-            <h4>Character Intelligence:</h4>
-            <ul>
-              <li>Character attribute analysis (powers, affiliations, origins)</li>
-              <li>Appearance frequency and popularity metrics across series</li>
-              <li>Character relationship mapping and network analysis</li>
-              <li>Series evolution and character introduction timelines</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="project-footer">
-          <div class="project-tech">
-            <div class="tech-icon">T</div>
-          </div>
-          <a href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/MarvelCharacters_17545388066450/Dashboard1" 
-             target="_blank" class="view-project">View Dashboard</a>
-        </div>
-      </div>
-
-      <!-- Netflix Catalog Project -->
-      <div class="project-card tableau" data-category="tableau">
-        <div class="project-header">
-          <h3 class="project-title">📺 Netflix Content Strategy Analytics</h3>
-          <div class="project-tags">
-            <span class="tag">Streaming Analytics</span>
-            <span class="tag">Content Analysis</span>
-            <span class="tag">Global Distribution</span>
-          </div>
-        </div>
-        
-        <div class="project-visual">
-          <iframe src="https://public.tableau.com/views/Netflix_17545375851100/Netflix?:showVizHome=no&:embed=true"
-                  title="Netflix Catalog"></iframe>
-        </div>
-        
-        <div class="project-content">
-          <p class="project-description">
-            Comprehensive analysis of Netflix's content catalog examining distribution patterns by genre, country, and release timeline. Provides strategic insights into content acquisition strategies and regional preferences for streaming platforms.
-          </p>
-          
-          <div class="project-highlights">
-            <h4>Content Strategy Insights:</h4>
-            <ul>
-              <li>Genre distribution analysis and trending categories</li>
-              <li>Geographic content production and acquisition patterns</li>
-              <li>Release timeline analysis and content freshness metrics</li>
-              <li>Movies vs TV shows ratio and strategic focus areas</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="project-footer">
-          <div class="project-tech">
-            <div class="tech-icon">T</div>
-          </div>
-          <a href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/Netflix_17545375851100/Netflix" 
-             target="_blank" class="view-project">View Dashboard</a>
-        </div>
-      </div>
-
-      <!-- Netflix Instagram Project -->
-      <div class="project-card tableau" data-category="tableau">
-        <div class="project-header">
-          <h3 class="project-title">📱 Netflix India Social Media Analytics</h3>
-          <div class="project-tags">
-            <span class="tag">Social Media</span>
-            <span class="tag">Engagement Analysis</span>
-            <span class="tag">Content Strategy</span>
-          </div>
-        </div>
-        
-        <div class="project-visual">
-          <iframe src="https://public.tableau.com/views/netflixidinstagramaccount_17545371680700/DashboardNetflixid?:showVizHome=no&:embed=true"
-                  title="Netflix Instagram"></iframe>
-        </div>
-        
-        <div class="project-content">
-          <p class="project-description">
-            Social media performance analysis of Netflix India's Instagram strategy, examining engagement patterns, content themes, and audience interaction trends. Provides actionable insights for digital marketing and content optimization strategies.
-          </p>
-          
-          <div class="project-highlights">
-            <h4>Social Media Intelligence:</h4>
-            <ul>
-              <li>Engagement rate analysis across different content types</li>
-              <li>Content theme performance and audience preferences</li>
-              <li>Posting frequency optimization and timing analysis</li>
-              <li>Hashtag effectiveness and reach maximization strategies</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="project-footer">
-          <div class="project-tech">
-            <div class="tech-icon">T</div>
-          </div>
-          <a href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/netflixidinstagramaccount_17545371680700/DashboardNetflixid" 
-             target="_blank" class="view-project">View Dashboard</a>
-        </div>
-      </div>
-
-      <!-- Amazon Sales Project -->
-      <div class="project-card tableau" data-category="tableau">
-        <div class="project-header">
-          <h3 class="project-title">🛒 Amazon E-commerce Sales Intelligence</h3>
-          <div class="project-tags">
-            <span class="tag">E-commerce</span>
-            <span class="tag">Product Analytics</span>
-            <span class="tag">Revenue Optimization</span>
-          </div>
-        </div>
-        
-        <div class="project-visual">
-          <iframe src="https://public.tableau.com/views/AmazonSalesandQuantityDashboard1/Dashboard1?:showVizHome=no&:embed=true"
-                  title="Amazon Sales"></iframe>
-        </div>
-        
-        <div class="project-content">
-          <p class="project-description">
-            Advanced e-commerce analytics dashboard analyzing Amazon's product-level sales performance, quantity metrics, and category-wise revenue distribution. Delivers actionable insights for inventory management and sales optimization strategies.
-          </p>
-          
-          <div class="project-highlights">
-            <h4>E-commerce Insights:</h4>
-            <ul>
-              <li>Product-level sales performance and profitability analysis</li>
-              <li>Category performance comparison and market share analysis</li>
-              <li>Inventory turnover rates and demand forecasting</li>
-              <li>Revenue optimization opportunities and growth drivers</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="project-footer">
-          <div class="project-tech">
-            <div class="tech-icon">T</div>
-          </div>
-          <a href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/AmazonSalesandQuantityDashboard1/Dashboard1" 
-             target="_blank" class="view-project">View Dashboard</a>
-        </div>
-      </div>
-
-      <!-- COVID-19 Project -->
-      <div class="project-card tableau" data-category="tableau">
-        <div class="project-header">
-          <h3 class="project-title">🧪 COVID-19 India: Public Health Analytics</h3>
-          <div class="project-tags">
-            <span class="tag">Healthcare Analytics</span>
-            <span class="tag">Epidemiology</span>
-            <span class="tag">Geographic Analysis</span>
-          </div>
-        </div>
-        
-        <div class="project-visual">
-          <iframe src="https://public.tableau.com/views/Covid-19inIndiaDashboardAnalysis_17404684076360/Dashboard1?:showVizHome=no&:embed=true"
-                  title="COVID-19 India"></iframe>
-        </div>
-        
-        <div class="project-content">
-          <p class="project-description">
-            Comprehensive epidemiological analysis of COVID-19 impact across Indian states, tracking case progression, recovery rates, and testing infrastructure. Provides critical insights for public health decision-making and resource allocation strategies.
-          </p>
-          
-          <div class="project-highlights">
-            <h4>Public Health Intelligence:</h4>
-            <ul>
-              <li>State-wise case progression and infection rate analysis</li>
-              <li>Recovery rate trends and healthcare system performance</li>
-              <li>Testing capacity analysis and coverage optimization</li>
-              <li>Geographic hotspot identification and containment strategies</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="project-footer">
-          <div class="project-tech">
-            <div class="tech-icon">T</div>
-          </div>
-          <a href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/Covid-19inIndiaDashboardAnalysis_17404684076360/Dashboard1" 
-             target="_blank" class="view-project">View Dashboard</a>
-        </div>
-      </div>
-
-    </section>
   </div>
 
-  <script>
-    function filterProjects(type) {
-      const cards = document.querySelectorAll('.project-card');
-      const buttons = document.querySelectorAll('.filter-btn');
-      
-      // Remove active class from all buttons
-      buttons.forEach(btn => btn.classList.remove('active'));
-      
-      // Add active class to clicked button
-      event.target.classList.add('active');
-      
-      cards.forEach(card => {
-        if (type === 'all' || card.classList.contains(type)) {
-          card.style.display = 'block';
-          card.style.animation = 'fadeInUp 0.6s ease forwards';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
+  <!-- PYTHON: Voice Calculator -->
+  <div class="card python">
+    <div class="card-header">
+      🧮 AI Voice Calculator
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Parser</span>
+      </div>
+    </div>
+    <div class="card-body">
+      Voice-driven calculator that understands phrases like
+      “five thousand times seven” and speaks results back.
+      <ul>
+        <li>Voice Input</li>
+        <li>Math Parser</li>
+        <li>TTS Output</li>
+      </ul>
+    </div>
+    <div class="card-footer">
+      <div class="tech">Py</div>
+      <a class="view" target="_blank"
+         href="https://github.com/DineshAlla12/AI-Voice-Calculator">
+         GitHub
+      </a>
+    </div>
+  </div>
 
-    // Add smooth scrolling
-    document.addEventListener('DOMContentLoaded', function() {
-      // Stagger animation for initial load
-      const cards = document.querySelectorAll('.project-card');
-      cards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-      });
-    });
-  </script>
+</section>
+</div>
+
+<script>
+function filter(type){
+  document.querySelectorAll(".filter-btn")
+    .forEach(b=>b.classList.remove("active"));
+  event.target.classList.add("active");
+
+  document.querySelectorAll(".card").forEach(card=>{
+    card.style.display =
+      type==="all" || card.classList.contains(type)
+      ? "block" : "none";
+  });
+}
+</script>
 
 </body>
 </html>
