@@ -6,151 +6,90 @@
   <title>Dinesh Alla | Portfolio</title>
 
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg,#667eea,#764ba2);
-      min-height:100vh;
-      color:#333;
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+      background:linear-gradient(135deg,#667eea,#764ba2);
+      min-height:100vh;color:#333;
+    }
+    .container{max-width:1200px;margin:auto;padding:0 20px}
+    header{
+      text-align:center;padding:4rem 0;background:rgba(255,255,255,.95);
+      backdrop-filter:blur(10px);margin-bottom:2rem
+    }
+    h1{
+      font-size:3.2rem;font-weight:800;
+      background:linear-gradient(135deg,#667eea,#764ba2);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      margin-bottom:.6rem
+    }
+    header p{font-size:1.2rem;color:#666;margin:.5rem 0 1.6rem}
+    .cta{
+      display:inline-block;background:linear-gradient(135deg,#667eea,#764ba2);
+      color:#fff;padding:12px 28px;border-radius:30px;text-decoration:none;
+      font-weight:700;box-shadow:0 10px 25px rgba(102,126,234,.25);
+      transition:.2s;
+    }
+    .cta:hover{transform:translateY(-2px)}
+    nav{
+      text-align:center;margin:1.5rem 0 2.5rem;
+      background:rgba(255,255,255,.9);padding:1.2rem;border-radius:18px;
+      backdrop-filter:blur(10px)
+    }
+    .filter-btn{
+      border:2px solid #667eea;background:transparent;color:#667eea;
+      padding:10px 18px;margin:6px;border-radius:24px;cursor:pointer;
+      font-weight:700;transition:.2s
+    }
+    .filter-btn.active,.filter-btn:hover{
+      background:#667eea;color:#fff;box-shadow:0 10px 22px rgba(102,126,234,.25);
+      transform:translateY(-1px)
     }
 
-    .container {
-      max-width:1200px;
-      margin:auto;
-      padding:0 20px;
-    }
-
-    header {
-      text-align:center;
-      padding:4rem 0;
-      background:#fff;
-      margin-bottom:2rem;
-    }
-
-    h1 {
-      font-size:3.2rem;
-      background: linear-gradient(135deg,#667eea,#764ba2);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    header p {
-      font-size:1.3rem;
-      color:#666;
-      margin:1rem 0 2rem;
-    }
-
-    .cta {
-      background:#667eea;
-      color:#fff;
-      padding:12px 30px;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
-    }
-
-    nav {
-      text-align:center;
-      margin-bottom:3rem;
-    }
-
-    .filter-btn {
-      border:2px solid #667eea;
-      background:none;
-      color:#667eea;
-      padding:10px 18px;
-      margin:5px;
-      border-radius:25px;
-      cursor:pointer;
-      font-weight:600;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background:#667eea;
-      color:#fff;
-    }
-
-    .projects {
+    .projects{
       display:grid;
-      grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
-      gap:2rem;
-      padding-bottom:4rem;
+      grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+      gap:1.8rem;
+      padding-bottom:4rem
     }
 
-    .card {
-      background:#fff;
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 15px 35px rgba(0,0,0,.1);
-      transition:.3s;
+    .card{
+      background:#fff;border-radius:18px;overflow:hidden;
+      box-shadow:0 15px 35px rgba(0,0,0,.10);
+      transition:.25s;display:block
+    }
+    .card:hover{transform:translateY(-8px)}
+    .card-header{
+      padding:1.1rem 1.2rem;background:#f4f6ff;
+      font-weight:800;font-size:1.15rem
+    }
+    .tags{margin-top:8px}
+    .tag{
+      display:inline-block;background:#667eea;color:#fff;
+      padding:3px 10px;border-radius:14px;font-size:.75rem;margin-right:6px
+    }
+    .card-body{padding:1.15rem 1.2rem;color:#555;line-height:1.6}
+    .card-body ul{margin-top:10px;padding-left:18px}
+    .card-footer{
+      padding:1rem 1.2rem;background:#f4f6ff;
+      display:flex;justify-content:space-between;align-items:center
+    }
+    .tech{
+      background:#667eea;color:#fff;width:34px;height:34px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem
+    }
+    .view{
+      text-decoration:none;background:#667eea;color:#fff;padding:8px 16px;
+      border-radius:20px;font-size:.9rem;font-weight:700
+    }
+    .viz{
+      width:100%;height:260px;border:none;display:block;background:#fff;
     }
 
-    .card:hover {
-      transform:translateY(-8px);
-    }
-
-    .card-header {
-      padding:1.2rem;
-      background:#f4f6ff;
-      font-weight:700;
-      font-size:1.2rem;
-    }
-
-    .tags {
-      margin-top:6px;
-    }
-
-    .tag {
-      display:inline-block;
-      background:#667eea;
-      color:#fff;
-      padding:3px 10px;
-      border-radius:14px;
-      font-size:.75rem;
-      margin-right:5px;
-    }
-
-    .card-body {
-      padding:1.2rem;
-      color:#555;
-      line-height:1.6;
-    }
-
-    .card-body ul {
-      margin-top:10px;
-      padding-left:18px;
-    }
-
-    .card-footer {
-      padding:1rem;
-      background:#f4f6ff;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .tech {
-      background:#667eea;
-      color:#fff;
-      width:32px;
-      height:32px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:bold;
-      font-size:.85rem;
-    }
-
-    .view {
-      text-decoration:none;
-      background:#667eea;
-      color:#fff;
-      padding:8px 16px;
-      border-radius:20px;
-      font-size:.9rem;
+    @media (max-width:768px){
+      h1{font-size:2.4rem}
+      .projects{grid-template-columns:1fr}
+      .viz{height:240px}
     }
   </style>
 </head>
@@ -161,89 +100,204 @@
   <div class="container">
     <h1>Dinesh Alla</h1>
     <p>Data Analytics • Business Intelligence • Python Automation</p>
-    <a class="cta" href="resume.pdf" download>Download Resume</a>
+    <a class="cta" href="resume.pdf" download>📄 Download Resume</a>
   </div>
 </header>
 
 <div class="container">
 
-<nav>
-  <button class="filter-btn active" onclick="filter('all')">All</button>
-  <button class="filter-btn" onclick="filter('tableau')">Tableau</button>
-  <button class="filter-btn" onclick="filter('python')">Python</button>
-</nav>
+  <nav>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="tableau">Tableau</button>
+    <button class="filter-btn" data-filter="python">Python</button>
+  </nav>
 
-<section class="projects">
+  <section class="projects">
 
-  <!-- PYTHON: Fellow -->
-  <div class="card python">
-    <div class="card-header">
-      🤖 Fellow – Voice Assistant
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">Speech</span>
+    <!-- ===================== -->
+    <!-- PYTHON PROJECTS -->
+    <!-- ===================== -->
+
+    <div class="card python">
+      <div class="card-header">
+        🤖 Fellow – Voice Assistant
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Speech</span>
+          <span class="tag">TTS</span>
+        </div>
+      </div>
+      <div class="card-body">
+        A Python voice assistant that understands voice & typed commands, speaks responses,
+        opens websites, tells time/date, sets timers, saves notes, and fetches weather.
+        <ul>
+          <li>SpeechRecognition + pyttsx3</li>
+          <li>Weather via OpenWeather API</li>
+          <li>Notes saved to a file</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <div class="tech">Py</div>
+        <a class="view" target="_blank" href="https://github.com/DineshAlla12/Fellow-Voice-Assistant">GitHub</a>
       </div>
     </div>
-    <div class="card-body">
-      A Python voice assistant that understands voice & typed commands, speaks responses,
-      opens websites, tells time/date, and fetches real-time weather.
-      <ul>
-        <li>Speech Recognition</li>
-        <li>Text-to-Speech</li>
-        <li>Weather API</li>
-      </ul>
-    </div>
-    <div class="card-footer">
-      <div class="tech">Py</div>
-      <a class="view" target="_blank"
-         href="https://github.com/DineshAlla12/Fellow-Voice-Assistant">
-         GitHub
-      </a>
-    </div>
-  </div>
 
-  <!-- PYTHON: Voice Calculator -->
-  <div class="card python">
-    <div class="card-header">
-      🧮 AI Voice Calculator
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">Parser</span>
+    <div class="card python">
+      <div class="card-header">
+        🧮 AI Voice Calculator
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Parser</span>
+          <span class="tag">Voice</span>
+        </div>
+      </div>
+      <div class="card-body">
+        A voice-driven calculator that understands expressions and speaks results back.
+        <ul>
+          <li>Voice input (speech to text)</li>
+          <li>Parser to handle operations</li>
+          <li>Text-to-speech output</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <div class="tech">Py</div>
+        <a class="view" target="_blank" href="https://github.com/DineshAlla12/AI-Voice-Calculator">GitHub</a>
       </div>
     </div>
-    <div class="card-body">
-      Voice-driven calculator that understands phrases like
-      “five thousand times seven” and speaks results back.
-      <ul>
-        <li>Voice Input</li>
-        <li>Math Parser</li>
-        <li>TTS Output</li>
-      </ul>
-    </div>
-    <div class="card-footer">
-      <div class="tech">Py</div>
-      <a class="view" target="_blank"
-         href="https://github.com/DineshAlla12/AI-Voice-Calculator">
-         GitHub
-      </a>
-    </div>
-  </div>
 
-</section>
+    <!-- ===================== -->
+    <!-- TABLEAU PROJECTS (7) -->
+    <!-- ===================== -->
+
+    <div class="card tableau">
+      <div class="card-header">
+        🏏 IPL Team Performance Analytics (2008–2020)
+        <div class="tags">
+          <span class="tag">Tableau</span>
+          <span class="tag">Sports</span>
+        </div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/IPL2008-2020teams/Dashboard1?:showVizHome=no&:embed=true" title="IPL"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/IPL2008-2020teams/Dashboard1">View</a>
+      </div>
+    </div>
+
+    <div class="card tableau">
+      <div class="card-header">
+        🌍 Global Student Migration Analytics
+        <div class="tags">
+          <span class="tag">Tableau</span>
+          <span class="tag">Geo</span>
+        </div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/InternationalStudents_17546218947790/InternationalStudentsDashboard?:showVizHome=no&:embed=true" title="International Students"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/InternationalStudents_17546218947790/InternationalStudentsDashboard">View</a>
+      </div>
+    </div>
+
+    <div class="card tableau">
+      <div class="card-header">
+        🎮 Gaming Industry Sales Intelligence (Till 2020)
+        <div class="tags">
+          <span class="tag">Tableau</span>
+          <span class="tag">Market</span>
+        </div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/VIDEOGAMESSALESTILL2020/Dashboard1?:showVizHome=no&:embed=true" title="Video Games"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/VIDEOGAMESSALESTILL2020/Dashboard1">View</a>
+      </div>
+    </div>
+
+    <div class="card tableau">
+      <div class="card-header">
+        🚗 Tesla Sales Performance (2016–2017)
+        <div class="tags">
+          <span class="tag">Tableau</span>
+          <span class="tag">Time Series</span>
+        </div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/TeslaSalesyear20162017/Dashboard1?:showVizHome=no&:embed=true" title="Tesla"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/TeslaSalesyear20162017/Dashboard1">View</a>
+      </div>
+    </div>
+
+    <div class="card tableau">
+      <div class="card-header">
+        🦸 Marvel Universe Character Analytics
+        <div class="tags">
+          <span class="tag">Tableau</span>
+          <span class="tag">Entertainment</span>
+        </div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/MarvelCharacters_17545388066450/Dashboard1?:showVizHome=no&:embed=true" title="Marvel"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/MarvelCharacters_17545388066450/Dashboard1">View</a>
+      </div>
+    </div>
+
+    <div class="card tableau">
+      <div class="card-header">
+        📺 Netflix Content Strategy Analytics
+        <div class="tags">
+          <span class="tag">Tableau</span>
+          <span class="tag">Streaming</span>
+        </div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/Netflix_17545375851100/Netflix?:showVizHome=no&:embed=true" title="Netflix"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/Netflix_17545375851100/Netflix">View</a>
+      </div>
+    </div>
+
+    <div class="card tableau">
+      <div class="card-header">
+        🧪 COVID-19 India – Public Health Analytics
+        <div class="tags">
+          <span class="tag">Tableau</span>
+          <span class="tag">Healthcare</span>
+        </div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/Covid-19inIndiaDashboardAnalysis_17404684076360/Dashboard1?:showVizHome=no&:embed=true" title="COVID"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/Covid-19inIndiaDashboardAnalysis_17404684076360/Dashboard1">View</a>
+      </div>
+    </div>
+
+  </section>
 </div>
 
 <script>
-function filter(type){
-  document.querySelectorAll(".filter-btn")
-    .forEach(b=>b.classList.remove("active"));
-  event.target.classList.add("active");
+  // No "event" bug. We attach listeners properly.
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll(".card");
 
-  document.querySelectorAll(".card").forEach(card=>{
-    card.style.display =
-      type==="all" || card.classList.contains(type)
-      ? "block" : "none";
+  function applyFilter(type){
+    cards.forEach(card=>{
+      card.style.display = (type === "all" || card.classList.contains(type)) ? "block" : "none";
+    });
+  }
+
+  buttons.forEach(btn=>{
+    btn.addEventListener("click", () => {
+      buttons.forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      applyFilter(btn.dataset.filter);
+    });
   });
-}
+
+  // default
+  applyFilter("all");
 </script>
 
 </body>
