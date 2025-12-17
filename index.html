@@ -45,18 +45,15 @@
       background:#667eea;color:#fff;box-shadow:0 10px 22px rgba(102,126,234,.25);
       transform:translateY(-1px)
     }
-
     .projects{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
-      gap:1.8rem;
-      padding-bottom:4rem
+      gap:1.8rem;padding-bottom:4rem
     }
-
     .card{
       background:#fff;border-radius:18px;overflow:hidden;
       box-shadow:0 15px 35px rgba(0,0,0,.10);
-      transition:.25s;display:block
+      transition:.25s
     }
     .card:hover{transform:translateY(-8px)}
     .card-header{
@@ -82,11 +79,9 @@
       text-decoration:none;background:#667eea;color:#fff;padding:8px 16px;
       border-radius:20px;font-size:.9rem;font-weight:700
     }
-    .viz{
-      width:100%;height:260px;border:none;display:block;background:#fff;
-    }
+    .viz{width:100%;height:260px;border:none}
 
-    @media (max-width:768px){
+    @media(max-width:768px){
       h1{font-size:2.4rem}
       .projects{grid-template-columns:1fr}
       .viz{height:240px}
@@ -106,199 +101,17 @@
 
 <div class="container">
 
-  <nav>
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="tableau">Tableau</button>
-    <button class="filter-btn" data-filter="python">Python</button>
-  </nav>
+<nav>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="python">Python</button>
+  <button class="filter-btn" data-filter="tableau">Tableau</button>
+</nav>
 
-  <section class="projects">
+<section class="projects">
 
-    <!-- ===================== -->
-    <!-- PYTHON PROJECTS -->
-    <!-- ===================== -->
-
-    <div class="card python">
-      <div class="card-header">
-        🤖 Fellow – Voice Assistant
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Speech</span>
-          <span class="tag">TTS</span>
-        </div>
-      </div>
-      <div class="card-body">
-        A Python voice assistant that understands voice & typed commands, speaks responses,
-        opens websites, tells time/date, sets timers, saves notes, and fetches weather.
-        <ul>
-          <li>SpeechRecognition + pyttsx3</li>
-          <li>Weather via OpenWeather API</li>
-          <li>Notes saved to a file</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <div class="tech">Py</div>
-        <a class="view" target="_blank" href="https://github.com/DineshAlla12/Fellow-Voice-Assistant">GitHub</a>
-      </div>
-    </div>
-
-    <div class="card python">
-      <div class="card-header">
-        🧮 AI Voice Calculator
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Parser</span>
-          <span class="tag">Voice</span>
-        </div>
-      </div>
-      <div class="card-body">
-        A voice-driven calculator that understands expressions and speaks results back.
-        <ul>
-          <li>Voice input (speech to text)</li>
-          <li>Parser to handle operations</li>
-          <li>Text-to-speech output</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <div class="tech">Py</div>
-        <a class="view" target="_blank" href="https://github.com/DineshAlla12/AI-Voice-Calculator">GitHub</a>
-      </div>
-    </div>
-
-    <!-- ===================== -->
-    <!-- TABLEAU PROJECTS (7) -->
-    <!-- ===================== -->
-
-    <div class="card tableau">
-      <div class="card-header">
-        🏏 IPL Team Performance Analytics (2008–2020)
-        <div class="tags">
-          <span class="tag">Tableau</span>
-          <span class="tag">Sports</span>
-        </div>
-      </div>
-      <iframe class="viz" src="https://public.tableau.com/views/IPL2008-2020teams/Dashboard1?:showVizHome=no&:embed=true" title="IPL"></iframe>
-      <div class="card-footer">
-        <div class="tech">T</div>
-        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/IPL2008-2020teams/Dashboard1">View</a>
-      </div>
-    </div>
-
-    <div class="card tableau">
-      <div class="card-header">
-        🌍 Global Student Migration Analytics
-        <div class="tags">
-          <span class="tag">Tableau</span>
-          <span class="tag">Geo</span>
-        </div>
-      </div>
-      <iframe class="viz" src="https://public.tableau.com/views/InternationalStudents_17546218947790/InternationalStudentsDashboard?:showVizHome=no&:embed=true" title="International Students"></iframe>
-      <div class="card-footer">
-        <div class="tech">T</div>
-        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/InternationalStudents_17546218947790/InternationalStudentsDashboard">View</a>
-      </div>
-    </div>
-
-    <div class="card tableau">
-      <div class="card-header">
-        🎮 Gaming Industry Sales Intelligence (Till 2020)
-        <div class="tags">
-          <span class="tag">Tableau</span>
-          <span class="tag">Market</span>
-        </div>
-      </div>
-      <iframe class="viz" src="https://public.tableau.com/views/VIDEOGAMESSALESTILL2020/Dashboard1?:showVizHome=no&:embed=true" title="Video Games"></iframe>
-      <div class="card-footer">
-        <div class="tech">T</div>
-        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/VIDEOGAMESSALESTILL2020/Dashboard1">View</a>
-      </div>
-    </div>
-
-    <div class="card tableau">
-      <div class="card-header">
-        🚗 Tesla Sales Performance (2016–2017)
-        <div class="tags">
-          <span class="tag">Tableau</span>
-          <span class="tag">Time Series</span>
-        </div>
-      </div>
-      <iframe class="viz" src="https://public.tableau.com/views/TeslaSalesyear20162017/Dashboard1?:showVizHome=no&:embed=true" title="Tesla"></iframe>
-      <div class="card-footer">
-        <div class="tech">T</div>
-        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/TeslaSalesyear20162017/Dashboard1">View</a>
-      </div>
-    </div>
-
-    <div class="card tableau">
-      <div class="card-header">
-        🦸 Marvel Universe Character Analytics
-        <div class="tags">
-          <span class="tag">Tableau</span>
-          <span class="tag">Entertainment</span>
-        </div>
-      </div>
-      <iframe class="viz" src="https://public.tableau.com/views/MarvelCharacters_17545388066450/Dashboard1?:showVizHome=no&:embed=true" title="Marvel"></iframe>
-      <div class="card-footer">
-        <div class="tech">T</div>
-        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/MarvelCharacters_17545388066450/Dashboard1">View</a>
-      </div>
-    </div>
-
-    <div class="card tableau">
-      <div class="card-header">
-        📺 Netflix Content Strategy Analytics
-        <div class="tags">
-          <span class="tag">Tableau</span>
-          <span class="tag">Streaming</span>
-        </div>
-      </div>
-      <iframe class="viz" src="https://public.tableau.com/views/Netflix_17545375851100/Netflix?:showVizHome=no&:embed=true" title="Netflix"></iframe>
-      <div class="card-footer">
-        <div class="tech">T</div>
-        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/Netflix_17545375851100/Netflix">View</a>
-      </div>
-    </div>
-
-    <div class="card tableau">
-      <div class="card-header">
-        🧪 COVID-19 India – Public Health Analytics
-        <div class="tags">
-          <span class="tag">Tableau</span>
-          <span class="tag">Healthcare</span>
-        </div>
-      </div>
-      <iframe class="viz" src="https://public.tableau.com/views/Covid-19inIndiaDashboardAnalysis_17404684076360/Dashboard1?:showVizHome=no&:embed=true" title="COVID"></iframe>
-      <div class="card-footer">
-        <div class="tech">T</div>
-        <a class="view" target="_blank" href="https://public.tableau.com/app/profile/dinesh.alla4547/viz/Covid-19inIndiaDashboardAnalysis_17404684076360/Dashboard1">View</a>
-      </div>
-    </div>
-
-  </section>
-</div>
-
-<script>
-  // No "event" bug. We attach listeners properly.
-  const buttons = document.querySelectorAll(".filter-btn");
-  const cards = document.querySelectorAll(".card");
-
-  function applyFilter(type){
-    cards.forEach(card=>{
-      card.style.display = (type === "all" || card.classList.contains(type)) ? "block" : "none";
-    });
-  }
-
-  buttons.forEach(btn=>{
-    btn.addEventListener("click", () => {
-      buttons.forEach(b=>b.classList.remove("active"));
-      btn.classList.add("active");
-      applyFilter(btn.dataset.filter);
-    });
-  });
-
-  // default
-  applyFilter("all");
-</script>
-
-</body>
-</html>
+  <!-- FEATURED PYTHON PROJECT -->
+  <div class="card python">
+    <div class="card-header">
+      🤖 Fellow – AI Voice Assistant
+      <div class="tags">
+        <span class="tag">Python</span
