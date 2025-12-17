@@ -6,160 +6,92 @@
   <title>Dinesh Alla | Portfolio</title>
 
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg,#667eea,#764ba2);
-      min-height:100vh;
-      color:#333;
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+      background:linear-gradient(135deg,#667eea,#764ba2);
+      min-height:100vh;color:#333;
     }
-
-    .container {
-      max-width:1200px;
-      margin:auto;
-      padding:0 20px;
+    .container{max-width:1200px;margin:auto;padding:0 20px}
+    header{
+      text-align:center;padding:4rem 0;background:#fff;margin-bottom:2rem
     }
-
-    header {
-      text-align:center;
-      padding:4rem 0;
-      background:#fff;
-      margin-bottom:2rem;
+    h1{
+      font-size:3.2rem;font-weight:800;
+      background:linear-gradient(135deg,#667eea,#764ba2);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      margin-bottom:.6rem
     }
-
-    h1 {
-      font-size:3.2rem;
-      background: linear-gradient(135deg,#667eea,#764ba2);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    header p {
-      font-size:1.3rem;
-      color:#666;
-      margin:1rem 0 2rem;
-    }
-
-    .cta {
-      background:#667eea;
-      color:#fff;
-      padding:12px 30px;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
-    }
-
-    nav {
-      text-align:center;
-      margin-bottom:3rem;
-    }
-
-    .filter-btn {
-      border:2px solid #667eea;
-      background:none;
-      color:#667eea;
-      padding:10px 18px;
-      margin:5px;
-      border-radius:25px;
-      cursor:pointer;
-      font-weight:600;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background:#667eea;
-      color:#fff;
-    }
-
-    .projects {
-      display:grid;
-      grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
-      gap:2rem;
-      padding-bottom:4rem;
-    }
-
-    .card {
-      background:#fff;
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 15px 35px rgba(0,0,0,.1);
-      transition:.3s;
-      display:block;
-    }
-
-    .card:hover {
-      transform:translateY(-8px);
-    }
-
-    .card-header {
-      padding:1.2rem;
-      background:#f4f6ff;
+    header p{font-size:1.2rem;color:#666;margin:.5rem 0 1.6rem}
+    .cta{
+      display:inline-block;background:#667eea;color:#fff;
+      padding:12px 28px;border-radius:30px;text-decoration:none;
       font-weight:700;
-      font-size:1.2rem;
+    }
+    nav{
+      text-align:center;margin:1.5rem 0 2.5rem;
+      background:rgba(255,255,255,.95);padding:1.2rem;border-radius:18px;
+    }
+    .filter-btn{
+      border:2px solid #667eea;background:transparent;color:#667eea;
+      padding:10px 18px;margin:6px;border-radius:24px;cursor:pointer;
+      font-weight:700;transition:.2s
+    }
+    .filter-btn.active,.filter-btn:hover{
+      background:#667eea;color:#fff;
+      transform:translateY(-1px)
     }
 
-    .tags {
-      margin-top:6px;
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+      gap:1.8rem;
+      padding-bottom:4rem
     }
 
-    .tag {
-      display:inline-block;
-      background:#667eea;
-      color:#fff;
-      padding:3px 10px;
-      border-radius:14px;
-      font-size:.75rem;
-      margin-right:5px;
+    .card{
+      background:#fff;border-radius:18px;overflow:hidden;
+      box-shadow:0 15px 35px rgba(0,0,0,.10);
+      transition:.25s;display:block
+    }
+    .card:hover{transform:translateY(-8px)}
+    .card-header{
+      padding:1.1rem 1.2rem;background:#f4f6ff;
+      font-weight:800;font-size:1.15rem
+    }
+    .tags{margin-top:8px}
+    .tag{
+      display:inline-block;background:#667eea;color:#fff;
+      padding:3px 10px;border-radius:14px;font-size:.75rem;margin-right:6px
+    }
+    .card-body{padding:1.15rem 1.2rem;color:#555;line-height:1.6}
+    .card-body ul{margin-top:10px;padding-left:18px}
+    .card-footer{
+      padding:1rem 1.2rem;background:#f4f6ff;
+      display:flex;justify-content:space-between;align-items:center
+    }
+    .tech{
+      background:#667eea;color:#fff;width:34px;height:34px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem
+    }
+    .view{
+      text-decoration:none;background:#667eea;color:#fff;padding:8px 16px;
+      border-radius:20px;font-size:.9rem;font-weight:700
     }
 
-    .card-body {
-      padding:1.2rem;
-      color:#555;
-      line-height:1.6;
-    }
-
-    .card-body ul {
-      margin-top:10px;
-      padding-left:18px;
-    }
-
-    .card-footer {
-      padding:1rem;
-      background:#f4f6ff;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .tech {
-      background:#667eea;
-      color:#fff;
-      width:32px;
-      height:32px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:bold;
-      font-size:.85rem;
-    }
-
-    .view {
-      text-decoration:none;
-      background:#667eea;
-      color:#fff;
-      padding:8px 16px;
-      border-radius:20px;
-      font-size:.9rem;
-    }
-
+    /* Tableau iframe */
     .viz{
       width:100%;
       height:260px;
       border:none;
       display:block;
       background:#fff;
+    }
+
+    @media (max-width:768px){
+      h1{font-size:2.4rem}
+      .projects{grid-template-columns:1fr}
+      .viz{height:240px}
     }
   </style>
 </head>
@@ -176,79 +108,214 @@
 
 <div class="container">
 
-<nav>
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="tableau">Tableau</button>
-  <button class="filter-btn" data-filter="python">Python</button>
-  <button class="filter-btn" data-filter="sql">SQL</button>
-</nav>
+  <nav>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="tableau">Tableau</button>
+    <button class="filter-btn" data-filter="python">Python</button>
+    <button class="filter-btn" data-filter="sql">SQL</button>
+  </nav>
 
-<section class="projects">
+  <section class="projects">
 
-  <!-- PYTHON: Fellow -->
-  <div class="card python">
-    <div class="card-header">
-      🤖 Fellow – Voice Assistant
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">Speech</span>
+    <!-- ===================== -->
+    <!-- PYTHON (2) -->
+    <!-- ===================== -->
+
+    <div class="card python">
+      <div class="card-header">
+        🤖 Fellow – Voice Assistant
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Speech</span>
+        </div>
+      </div>
+      <div class="card-body">
+        A Python voice assistant that understands voice & typed commands, speaks responses,
+        opens websites, tells time/date, and fetches real-time weather.
+        <ul>
+          <li>Speech Recognition</li>
+          <li>Text-to-Speech</li>
+          <li>Weather API</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <div class="tech">Py</div>
+        <a class="view" target="_blank" href="https://github.com/DineshAlla12/Fellow-Voice-Assistant">GitHub</a>
       </div>
     </div>
-    <div class="card-body">
-      A Python voice assistant that understands voice & typed commands, speaks responses,
-      opens websites, tells time/date, and fetches real-time weather.
-      <ul>
-        <li>Speech Recognition</li>
-        <li>Text-to-Speech</li>
-        <li>Weather API</li>
-      </ul>
-    </div>
-    <div class="card-footer">
-      <div class="tech">Py</div>
-      <a class="view" target="_blank"
-         href="https://github.com/DineshAlla12/Fellow-Voice-Assistant">
-         GitHub
-      </a>
-    </div>
-  </div>
 
-  <!-- PYTHON: Voice Calculator -->
-  <div class="card python">
-    <div class="card-header">
-      🧮 AI Voice Calculator
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">Parser</span>
+    <div class="card python">
+      <div class="card-header">
+        🧮 AI Voice Calculator
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Parser</span>
+        </div>
+      </div>
+      <div class="card-body">
+        Voice-driven calculator that understands phrases like
+        “five thousand times seven” and speaks results back.
+        <ul>
+          <li>Voice Input</li>
+          <li>Math Parser</li>
+          <li>TTS Output</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <div class="tech">Py</div>
+        <a class="view" target="_blank" href="https://github.com/DineshAlla12/AI-Voice-Calculator">GitHub</a>
       </div>
     </div>
-    <div class="card-body">
-      Voice-driven calculator that understands phrases like
-      “five thousand times seven” and speaks results back.
-      <ul>
-        <li>Voice Input</li>
-        <li>Math Parser</li>
-        <li>TTS Output</li>
-      </ul>
+
+    <!-- ===================== -->
+    <!-- TABLEAU (1–10 from your paste) -->
+    <!-- ===================== -->
+
+    <!-- 1 -->
+    <div class="card tableau">
+      <div class="card-header">
+        🏏 IPL Analysis (2008–2020)
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Sports</span></div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/IPL2008-2020teams/Dashboard1?:showVizHome=no&:embed=true"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/views/IPL2008-2020teams/Dashboard1">View</a>
+      </div>
     </div>
-    <div class="card-footer">
-      <div class="tech">Py</div>
-      <a class="view" target="_blank"
-         href="https://github.com/DineshAlla12/AI-Voice-Calculator">
-         GitHub
-      </a>
+
+    <!-- 2 -->
+    <div class="card tableau">
+      <div class="card-header">
+        🧪 COVID-19 India Dashboard
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Healthcare</span></div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/Covid-19inIndiaDashboardAnalysis_17404684076360/Dashboard1?:showVizHome=no&:embed=true"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/views/Covid-19inIndiaDashboardAnalysis_17404684076360/Dashboard1">View</a>
+      </div>
     </div>
-  </div>
 
-  <!-- TABLEAU PROJECTS -->
-  <!-- IMPORTANT: Paste your 12 Tableau cards here.
-       Each one MUST look like:
-       <div class="card tableau"> ... <iframe class="viz" src="..."></iframe> ... </div>
-  -->
+    <!-- 3 -->
+    <div class="card tableau">
+      <div class="card-header">
+        🛒 Amazon Sales & Quantity
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Sales</span></div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/AmazonSalesandQuantityDashboard1/Dashboard1?:showVizHome=no&:embed=true"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/views/AmazonSalesandQuantityDashboard1/Dashboard1">View</a>
+      </div>
+    </div>
 
-  <!-- SQL PROJECTS (empty for now; keep filter) -->
-  <!-- Later you will add: <div class="card sql"> ... </div> -->
+    <!-- 4 -->
+    <div class="card tableau">
+      <div class="card-header">
+        📱 Netflix Instagram Account Dashboard
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Social</span></div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/netflixidinstagramaccount_17545371680700/DashboardNetflixid?:showVizHome=no&:embed=true"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/views/netflixidinstagramaccount_17545371680700/DashboardNetflixid">View</a>
+      </div>
+    </div>
 
-</section>
+    <!-- 5 -->
+    <div class="card tableau">
+      <div class="card-header">
+        📺 Netflix Content Strategy
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Streaming</span></div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/Netflix_17545375851100/Netflix?:showVizHome=no&:embed=true"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/views/Netflix_17545375851100/Netflix">View</a>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="card tableau">
+      <div class="card-header">
+        🦸 Marvel Characters Analytics
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Entertainment</span></div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/MarvelCharacters_17545388066450/Dashboard1?:showVizHome=no&:embed=true"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/views/MarvelCharacters_17545388066450/Dashboard1">View</a>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="card tableau">
+      <div class="card-header">
+        🚗 Tesla Sales Performance (2016–2017)
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Auto</span></div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/TeslaSalesyear20162017/Dashboard1?:showVizHome=no&:embed=true"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/views/TeslaSalesyear20162017/Dashboard1">View</a>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="card tableau">
+      <div class="card-header">
+        🎮 Video Games Sales (Till 2020)
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Market</span></div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/VIDEOGAMESSALESTILL2020/Dashboard1?:showVizHome=no&:embed=true"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/views/VIDEOGAMESSALESTILL2020/Dashboard1">View</a>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="card tableau">
+      <div class="card-header">
+        🌍 International Students Stats
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Geo</span></div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/InternationalStudents_17546218947790/InternationalStudentsDashboard?:showVizHome=no&:embed=true"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/views/InternationalStudents_17546218947790/InternationalStudentsDashboard">View</a>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="card tableau">
+      <div class="card-header">
+        🇮🇳 Amazon India Dashboard
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Retail</span></div>
+      </div>
+      <iframe class="viz" src="https://public.tableau.com/views/amazonindia_17543195320560/Sheet1?:showVizHome=no&:embed=true"></iframe>
+      <div class="card-footer">
+        <div class="tech">T</div>
+        <a class="view" target="_blank" href="https://public.tableau.com/views/amazonindia_17543195320560/Sheet1">View</a>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- TABLEAU (11–12 placeholders) -->
+    <!-- Paste dashboards 11 and 12 names like: Workbook/Sheet and I’ll add them -->
+    <!-- ===================== -->
+    <!--
+    <div class="card tableau">
+      <div class="card-header">📊 Dashboard 11<div class="tags"><span class="tag">Tableau</span></div></div>
+      <iframe class="viz" src="https://public.tableau.com/views/WORKBOOK/SHEET?:showVizHome=no&:embed=true"></iframe>
+      <div class="card-footer"><div class="tech">T</div><a class="view" target="_blank" href="https://public.tableau.com/views/WORKBOOK/SHEET">View</a></div>
+    </div>
+    -->
+
+    <!-- SQL filter kept intentionally empty (you will add cards later) -->
+
+  </section>
 </div>
 
 <script>
@@ -257,8 +324,7 @@
 
   function applyFilter(type){
     cards.forEach(card=>{
-      card.style.display =
-        (type === "all" || card.classList.contains(type)) ? "block" : "none";
+      card.style.display = (type === "all" || card.classList.contains(type)) ? "block" : "none";
     });
   }
 
