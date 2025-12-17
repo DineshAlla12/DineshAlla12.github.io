@@ -1,92 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dinesh Alla | Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dinesh Alla | Portfolio</title>
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{
-      font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
-      background:linear-gradient(135deg,#667eea,#764ba2);
-      min-height:100vh;color:#333;
-    }
-    .container{max-width:1200px;margin:auto;padding:0 20px}
-    header{
-      text-align:center;padding:4rem 0;background:rgba(255,255,255,.95);
-      backdrop-filter:blur(10px);margin-bottom:2rem
-    }
-    h1{
-      font-size:3.2rem;font-weight:800;
-      background:linear-gradient(135deg,#667eea,#764ba2);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      margin-bottom:.6rem
-    }
-    header p{font-size:1.2rem;color:#666;margin:.5rem 0 1.6rem}
-    .cta{
-      display:inline-block;background:linear-gradient(135deg,#667eea,#764ba2);
-      color:#fff;padding:12px 28px;border-radius:30px;text-decoration:none;
-      font-weight:700;box-shadow:0 10px 25px rgba(102,126,234,.25);
-      transition:.2s;
-    }
-    .cta:hover{transform:translateY(-2px)}
-    nav{
-      text-align:center;margin:1.5rem 0 2.5rem;
-      background:rgba(255,255,255,.9);padding:1.2rem;border-radius:18px;
-      backdrop-filter:blur(10px)
-    }
-    .filter-btn{
-      border:2px solid #667eea;background:transparent;color:#667eea;
-      padding:10px 18px;margin:6px;border-radius:24px;cursor:pointer;
-      font-weight:700;transition:.2s
-    }
-    .filter-btn.active,.filter-btn:hover{
-      background:#667eea;color:#fff;box-shadow:0 10px 22px rgba(102,126,234,.25);
-      transform:translateY(-1px)
-    }
-    .projects{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
-      gap:1.8rem;padding-bottom:4rem
-    }
-    .card{
-      background:#fff;border-radius:18px;overflow:hidden;
-      box-shadow:0 15px 35px rgba(0,0,0,.10);
-      transition:.25s
-    }
-    .card:hover{transform:translateY(-8px)}
-    .card-header{
-      padding:1.1rem 1.2rem;background:#f4f6ff;
-      font-weight:800;font-size:1.15rem
-    }
-    .tags{margin-top:8px}
-    .tag{
-      display:inline-block;background:#667eea;color:#fff;
-      padding:3px 10px;border-radius:14px;font-size:.75rem;margin-right:6px
-    }
-    .card-body{padding:1.15rem 1.2rem;color:#555;line-height:1.6}
-    .card-body ul{margin-top:10px;padding-left:18px}
-    .card-footer{
-      padding:1rem 1.2rem;background:#f4f6ff;
-      display:flex;justify-content:space-between;align-items:center
-    }
-    .tech{
-      background:#667eea;color:#fff;width:34px;height:34px;border-radius:50%;
-      display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem
-    }
-    .view{
-      text-decoration:none;background:#667eea;color:#fff;padding:8px 16px;
-      border-radius:20px;font-size:.9rem;font-weight:700
-    }
-    .viz{width:100%;height:260px;border:none}
-
-    @media(max-width:768px){
-      h1{font-size:2.4rem}
-      .projects{grid-template-columns:1fr}
-      .viz{height:240px}
-    }
-  </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"Segoe UI",Tahoma,Verdana,sans-serif;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  min-height:100vh;color:#333;
+}
+.container{max-width:1200px;margin:auto;padding:0 20px}
+header{
+  text-align:center;padding:4rem 0;background:rgba(255,255,255,.95);
+  margin-bottom:2rem
+}
+h1{
+  font-size:3rem;font-weight:800;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+header p{font-size:1.2rem;color:#666;margin:1rem 0}
+nav{
+  text-align:center;margin:2rem 0;
+  background:#fff;padding:1.2rem;border-radius:16px
+}
+.filter-btn{
+  border:2px solid #667eea;background:none;color:#667eea;
+  padding:10px 18px;margin:6px;border-radius:24px;
+  cursor:pointer;font-weight:700
+}
+.filter-btn.active,.filter-btn:hover{
+  background:#667eea;color:#fff
+}
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:1.8rem;padding-bottom:4rem
+}
+.card{
+  background:#fff;border-radius:18px;overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+  transition:.25s
+}
+.card:hover{transform:translateY(-8px)}
+.card-header{
+  padding:1rem;background:#f4f6ff;font-weight:800
+}
+.tags{margin-top:6px}
+.tag{
+  display:inline-block;background:#667eea;color:#fff;
+  padding:3px 10px;border-radius:14px;font-size:.75rem;margin-right:6px
+}
+.card-body{padding:1rem;color:#555;line-height:1.6}
+.card-body ul{margin-top:8px;padding-left:18px}
+.card-footer{
+  padding:1rem;background:#f4f6ff;
+  display:flex;justify-content:space-between;align-items:center
+}
+.tech{
+  background:#667eea;color:#fff;
+  width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:.8rem
+}
+.view{
+  text-decoration:none;background:#667eea;color:#fff;
+  padding:8px 16px;border-radius:20px;font-weight:700
+}
+</style>
 </head>
 
 <body>
@@ -94,8 +78,7 @@
 <header>
   <div class="container">
     <h1>Dinesh Alla</h1>
-    <p>Data Analytics • Business Intelligence • Python Automation</p>
-    <a class="cta" href="resume.pdf" download>📄 Download Resume</a>
+    <p>Data Analytics • Business Intelligence • Python • SQL</p>
   </div>
 </header>
 
@@ -103,15 +86,147 @@
 
 <nav>
   <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="python">Python</button>
   <button class="filter-btn" data-filter="tableau">Tableau</button>
+  <button class="filter-btn" data-filter="python">Python</button>
+  <button class="filter-btn" data-filter="sql">SQL</button>
 </nav>
 
 <section class="projects">
 
-  <!-- FEATURED PYTHON PROJECT -->
-  <div class="card python">
-    <div class="card-header">
-      🤖 Fellow – AI Voice Assistant
-      <div class="tags">
-        <span class="tag">Python</span
+<!-- PYTHON -->
+<div class="card python">
+  <div class="card-header">
+    🤖 Fellow – AI Voice Assistant
+    <div class="tags">
+      <span class="tag">Python</span><span class="tag">Speech</span>
+    </div>
+  </div>
+  <div class="card-body">
+    AI voice assistant supporting voice & typed commands.
+    <ul>
+      <li>Weather, time, date, timers</li>
+      <li>Notes with persistence</li>
+      <li>Browser automation</li>
+    </ul>
+  </div>
+  <div class="card-footer">
+    <div class="tech">Py</div>
+    <a class="view" target="_blank"
+       href="https://github.com/DineshAlla12/Fellow-Voice-Assistant">GitHub</a>
+  </div>
+</div>
+
+<!-- PYTHON -->
+<div class="card python">
+  <div class="card-header">
+    🧮 AI Voice Calculator
+    <div class="tags">
+      <span class="tag">Python</span><span class="tag">Voice</span>
+    </div>
+  </div>
+  <div class="card-body">
+    Voice-enabled calculator that understands spoken math expressions.
+  </div>
+  <div class="card-footer">
+    <div class="tech">Py</div>
+    <a class="view" target="_blank"
+       href="https://github.com/DineshAlla12/AI-Voice-Calculator">GitHub</a>
+  </div>
+</div>
+
+<!-- SQL -->
+<div class="card sql">
+  <div class="card-header">
+    📊 SQL Sales Analytics
+    <div class="tags">
+      <span class="tag">SQL</span><span class="tag">Analytics</span>
+    </div>
+  </div>
+  <div class="card-body">
+    Business sales analysis using advanced SQL queries.
+    <ul>
+      <li>Joins, CTEs, window functions</li>
+      <li>Revenue & growth insights</li>
+    </ul>
+  </div>
+  <div class="card-footer">
+    <div class="tech">SQL</div>
+    <a class="view" target="_blank" href="#">View</a>
+  </div>
+</div>
+
+<!-- SQL -->
+<div class="card sql">
+  <div class="card-header">
+    🧠 Customer Retention Analysis
+    <div class="tags">
+      <span class="tag">SQL</span><span class="tag">BI</span>
+    </div>
+  </div>
+  <div class="card-body">
+    Identified churn patterns using cohort and retention analysis.
+  </div>
+  <div class="card-footer">
+    <div class="tech">SQL</div>
+    <a class="view" target="_blank" href="#">View</a>
+  </div>
+</div>
+
+<!-- TABLEAU -->
+<div class="card tableau">
+  <div class="card-header">
+    🌍 Global Student Migration
+    <div class="tags">
+      <span class="tag">Tableau</span>
+    </div>
+  </div>
+  <div class="card-body">
+    Interactive dashboard analyzing international student migration trends.
+  </div>
+  <div class="card-footer">
+    <div class="tech">T</div>
+    <a class="view" target="_blank"
+       href="https://public.tableau.com/">View</a>
+  </div>
+</div>
+
+<!-- TABLEAU -->
+<div class="card tableau">
+  <div class="card-header">
+    🏏 IPL Team Performance
+    <div class="tags">
+      <span class="tag">Tableau</span>
+    </div>
+  </div>
+  <div class="card-body">
+    Performance analytics of IPL teams across seasons.
+  </div>
+  <div class="card-footer">
+    <div class="tech">T</div>
+    <a class="view" target="_blank"
+       href="https://public.tableau.com/">View</a>
+  </div>
+</div>
+
+</section>
+</div>
+
+<script>
+const buttons=document.querySelectorAll(".filter-btn");
+const cards=document.querySelectorAll(".card");
+
+buttons.forEach(btn=>{
+  btn.onclick=()=>{
+    buttons.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    cards.forEach(card=>{
+      card.style.display =
+        btn.dataset.filter==="all" || card.classList.contains(btn.dataset.filter)
+        ? "block" : "none";
+    });
+  };
+});
+</script>
+
+</body>
+</html>
