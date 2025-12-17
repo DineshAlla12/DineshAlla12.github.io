@@ -85,6 +85,7 @@
       overflow:hidden;
       box-shadow:0 15px 35px rgba(0,0,0,.1);
       transition:.3s;
+      display:block;
     }
 
     .card:hover {
@@ -152,6 +153,14 @@
       border-radius:20px;
       font-size:.9rem;
     }
+
+    .viz{
+      width:100%;
+      height:260px;
+      border:none;
+      display:block;
+      background:#fff;
+    }
   </style>
 </head>
 
@@ -168,9 +177,10 @@
 <div class="container">
 
 <nav>
-  <button class="filter-btn active" onclick="filter('all')">All</button>
-  <button class="filter-btn" onclick="filter('tableau')">Tableau</button>
-  <button class="filter-btn" onclick="filter('python')">Python</button>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="tableau">Tableau</button>
+  <button class="filter-btn" data-filter="python">Python</button>
+  <button class="filter-btn" data-filter="sql">SQL</button>
 </nav>
 
 <section class="projects">
@@ -229,21 +239,38 @@
     </div>
   </div>
 
+  <!-- TABLEAU PROJECTS -->
+  <!-- IMPORTANT: Paste your 12 Tableau cards here.
+       Each one MUST look like:
+       <div class="card tableau"> ... <iframe class="viz" src="..."></iframe> ... </div>
+  -->
+
+  <!-- SQL PROJECTS (empty for now; keep filter) -->
+  <!-- Later you will add: <div class="card sql"> ... </div> -->
+
 </section>
 </div>
 
 <script>
-function filter(type){
-  document.querySelectorAll(".filter-btn")
-    .forEach(b=>b.classList.remove("active"));
-  event.target.classList.add("active");
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll(".card");
 
-  document.querySelectorAll(".card").forEach(card=>{
-    card.style.display =
-      type==="all" || card.classList.contains(type)
-      ? "block" : "none";
+  function applyFilter(type){
+    cards.forEach(card=>{
+      card.style.display =
+        (type === "all" || card.classList.contains(type)) ? "block" : "none";
+    });
+  }
+
+  buttons.forEach(btn=>{
+    btn.addEventListener("click", () => {
+      buttons.forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      applyFilter(btn.dataset.filter);
+    });
   });
-}
+
+  applyFilter("all");
 </script>
 
 </body>
